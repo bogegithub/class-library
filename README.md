@@ -9,7 +9,7 @@
 , 兼容地区编码变更以前的数据
 
 ```php
-use Giles\Library\IdCard;
+use Prince\Library\IdCard;
 
 $idCard = new IdCard();
 //验证身份证合法性，合法返回相应的所属信息，不合法返回false
@@ -32,7 +32,7 @@ $idcard->generate();
 -  `2位`  计数序列号,序列号即序列自增id,可以支持同一节点的同一进程同一毫秒生成4个ID序号 
 
 ```php
-use Giles\Library\Snowflake;
+use Prince\Library\Snowflake;
 
 //生成一个全局唯一ID
 echo Snowflake::uniqueId();

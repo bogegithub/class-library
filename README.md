@@ -2,7 +2,7 @@
 常用类库收集
 
 # 使用
-`composer require prince/library`
+`composer require princebo/library`
 
 ## IdCard.php
 > 用于校验中国大陆居民身份证号码合法性，获取对应的信息，如地区、性别、生日、星座、属相等,身份证代码计算方式为GB 11643-1999标准

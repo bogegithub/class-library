@@ -2,7 +2,7 @@
 /**
  * 基于Twitter的雪花算法改造，分布式全局唯一ID生成器
  *
- * @author  Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+ * @author  boge <football.prince.yan@gmail.com>
  * @date    2019/12/24 14:37
  *
  */
@@ -19,9 +19,7 @@ namespace Princebo\Library;
  * . 再下来10bit位的当前处理进程标识,10位的长度最多支持1023个机器进程
  * . 最后的2bit位的计数序列号,序列号即序列自增id,可以支持同一节点的同一进程同一毫秒生成4个ID序号
  *
- * @package WeberGiles\Favorites
- *
- * @author  Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+ * @author  boge <football.prince.yan@gmail.com>
  * @date    2019/12/24 14:37
  */
 final class Snowflake
@@ -69,7 +67,7 @@ final class Snowflake
      * 生成全局唯一ID
      *
      * @return string
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:35
      */
     public static function uniqueId(): string
@@ -89,7 +87,7 @@ final class Snowflake
      * 获取机器ID(机器IP的低self::MACHINE_BITS位的值)
      *
      * @return int
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:35
      */
     private static function getMachineId()
@@ -112,7 +110,7 @@ final class Snowflake
      * 获取当前执行进程的PID(低14位值)
      *
      * @return int
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:35
      */
     private static function getProcessId(): int
@@ -138,7 +136,7 @@ final class Snowflake
      * 获取计数序列值
      *
      * @return int
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:34
      */
     private static function getSequence(): int
@@ -175,7 +173,7 @@ final class Snowflake
      * 获取已经经过的时间的毫秒数
      *
      * @return int
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:34
      */
     private static function getPastTime(): int
@@ -196,7 +194,7 @@ final class Snowflake
      * 因为PHP实现原因,返回的毫妙最后两位始终是0,所以实践使用中将最后两位去掉以增加合理的有效位数
      *
      * @return int
-     * @author Giles <giles.wang@aliyun.com|giles.wang@qq.com>
+     * @author boge  <football.prince.yan@gmail.com>
      * @date   2019/12/24 14:34
      */
     private static function getCurrentMicrosecond(): int

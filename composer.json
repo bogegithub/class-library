@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Giles\\Library\\": "src/"
+            "Princebo\\Library\\": "src/"
         }
     },
     "minimum-stability": "dev"

@@ -8,7 +8,7 @@
  *
  */
 
-namespace Prince\Library;
+namespace Princebo\Library;
 
 class IdCard
 {

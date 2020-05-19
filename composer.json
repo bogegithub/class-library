@@ -1,5 +1,5 @@
 {
-    "name": "giles/library",
+    "name": "prince/library",
     "description": "收集整理常用的php工具类库 Some of the PHP class libraries in the collection",
     "type": "library",
     "license": "MIT",
@@ -13,8 +13,8 @@
     },
     "authors": [
         {
-            "name": "Giles.wang",
-            "email": "giles.wang@aliyun.com"
+            "name": "football.prince",
+            "email": "football.prince.yan@gmail.com"
         }
     ],
     "autoload": {

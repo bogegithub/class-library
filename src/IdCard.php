@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 中国大陆居民身份证验证
  *
@@ -6,7 +7,8 @@
  * @author Giles
  *
  */
-namespace Giles\Library;
+
+namespace Prince\Library;
 
 class IdCard
 {
@@ -41,7 +43,11 @@ class IdCard
         $this->areasCode    = substr($this->idCard, 0, 6);
 
         // 格式校验、生日校验、校验码校验
-        if (!$this->checkFormat() || !$this->checkBirthday() || !$this->checkLastCode() || !$this->checkProvince()) {
+        if (!$this->checkFormat()
+            || !$this->checkBirthday()
+            || !$this->checkLastCode()
+            || !$this->checkProvince()
+        ) {
             return false;
         }
 
@@ -95,6 +101,7 @@ class IdCard
         for ($i = 0; $i < 17; $i++) {
             $sum += $idCard[$i] * $this->salt[$i];
         }
+
         return $this->checksum[$sum % 11];
     }
 
@@ -108,6 +115,7 @@ class IdCard
         if (! preg_match('/^([\d]{17}[xX\d]|[\d]{15})$/', $this->idCard)) {
             return false;
         }
+
         return true;
     }
 

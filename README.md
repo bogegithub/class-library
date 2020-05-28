@@ -4,19 +4,6 @@
 # 使用
 `composer require princebo/library`
 
-## IdCard.php
-> 用于校验中国大陆居民身份证号码合法性，获取对应的信息，如地区、性别、生日、星座、属相等,身份证代码计算方式为GB 11643-1999标准
-, 兼容地区编码变更以前的数据
-
-```php
-use Princebo\Library\IdCard;
-
-$idCard = new IdCard();
-//验证身份证合法性，合法返回相应的所属信息，不合法返回false
-$idcard->verification('210203197503102721');
-//随机生成一个身份证号
-$idcard->generate();
-```
 ## Snowflake.php
 
 > 基于Twitter的雪花算法改造，分布式全局唯一ID生成器, 组成<毫秒级时间戳+机器ip+进程id+序列号>

@@ -2,13 +2,26 @@
 常用类库收集
 
 # 使用
-`composer require princebo/convertion`
-## 目标
-统一API接口的数据返回规范。
+`composer require princebo/library`
 
-## 规约
+## Snowflake.php
 
-### [异常规约](exception-convention.md)
-### [Controller返回规约](controller-convention.md)
-### [Model规约](model-convention.md)
-### [路由规约](router-convention.md)
+> 基于Twitter的雪花算法改造，分布式全局唯一ID生成器, 组成<毫秒级时间戳+机器ip+进程id+序列号>
+
+ 长度最长为64位bit,各bit位含义如下：
+-  `1位` 不用。二进制中最高位为1的都是负数，但是我们生成的id一般都使用整数，所以这个最高位固定是0
+-  `41位` 用来记录时间戳（毫秒）
+    - 41位可以表示$2^{41}-1$个数字，
+    - 如果只用来表示正整数（计算机中正数包含0），可以表示的数值范围是：0 至 $2^{41}-1$，减1是因为可表示的数值范围是从0开始算的，而不是1。
+    - 也就是说41位可以表示$2^{41}-1$个毫秒的值，转化成单位年则是$(2^{41}-1) / (1000 * 60 * 60 * 24 * 365) = 69$年
+-  `10位` 机器IP低10位,可以支持最多1023个机器节点
+-  `10位` 当前处理进程标识,10位的长度最多支持1023个机器进程
+-  `2位`  计数序列号,序列号即序列自增id,可以支持同一节点的同一进程同一毫秒生成4个ID序号 
+
+```php
+use Princebo\Library\Snowflake;
+
+//生成一个全局唯一ID
+echo Snowflake::uniqueId();
+```
+
